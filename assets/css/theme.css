@@ -267,6 +267,7 @@ a.text-dark:hover {
 	color:#999;
 	border-radius:30px;
 	height:35px;
+	width: 200px;
 	border:1px solid #eee;
 }
 .mb-2rem {
