@@ -7,7 +7,7 @@ image: assets/images/udemy-cancer-biology-101.png
 tags: [featured]
 ---
 
-This short <a href="https://www.udemy.com/course/cancer-biology-101/" target="_blank">Udemy</a> course may seem open to beginners, but some work is required before enrolling if you want to fully appreciate this course. 
+This short <a href="https://www.udemy.com/course/cancer-biology-101/" target="_blank">Udemy</a> course may be open to beginners, but some work is required before enrolling if you want to fully appreciate this course. 
 
 Although the course is only 1 hour long, you will need to be comfortable with the basics of biology. 
 

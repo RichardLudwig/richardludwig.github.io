@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="application-name" content="{{site.name}}">
+    <meta name="author" content="{{site.author}}">
+    <meta name="description" content="{{site.description}}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -29,7 +32,6 @@
     crossorigin="anonymous"></script>
 
     {% include tracking-header.html %}
-
 
 </head>
 
@@ -77,15 +79,7 @@
         <div class="container">
         <div class="row align-items-center justify-content-between">
             <div>
-                <span class="navbar-brand mr-2 mb-0"><strong>Mundana</strong></span>
-                <span>Copyright © <script>document.write(new Date().getFullYear())</script>.</span>
-
-                <!--  Github Repo Star Btn-->
-                <a class="text-dark ml-1" target="_blank" href="https://github.com/wowthemesnet/mundana-theme-jekyll"><i class="fab fa-github"></i> Fork on Github</a>
-
-            </div>
-            <div>
-                Made with <a target="_blank" class="text-dark font-weight-bold" href="https://www.wowthemes.net/mundana-jekyll-theme/"> Mundana Jekyll Theme </a> by <a class="text-dark" target="_blank" href="https://www.wowthemes.net">WowThemes</a>.
+                <span>Copyright © <script>document.write(new Date().getFullYear())</script>. {{ site.author }}</span>
             </div>
         </div>
         </div>

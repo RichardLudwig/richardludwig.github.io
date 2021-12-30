@@ -1,5 +1,6 @@
 # Site
 name: 'RichardLudwig.com'
+author: 'Richard Ludwig'
 description: 'RichardLudwig.com is a blog/portfolio site to highlight connections between biomedicine and technology.'
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
