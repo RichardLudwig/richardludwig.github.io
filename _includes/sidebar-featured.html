@@ -1,19 +1,27 @@
 <div class="sticky-top sticky-top-offset">
-    <h4 class="font-weight-bold spanborder"><span>Featured</span></h4>  
+    <h4 class="font-weight-bold spanborder"><span>Most Recent</span></h4>  
     <ol class="list-featured">				
-        {% for post in site.tags.featured %}                
+        {% for post in site.posts reversed limit:3 %}                
             <li class="mb-4">
             <span>
                 <h6 class="font-weight-bold">
                     <a href="{{site.baseurl}}{{ post.url }}" class="text-dark">{{ post.title }}</a>
                 </h6>
-                <span class="d-block text-muted">
-                    In <span class="catlist">
-                    {% for category in post.categories %}
-                    <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
-                    {% endfor %}
-                    </span>
-                </span>
+                <p class="d-block text-muted">{{ post.pitch }}</p>
+            </span>
+            </li>                
+        {% endfor %}   
+    </ol>
+    <br>
+    <h4 class="font-weight-bold spanborder"><span>Featured</span></h4>  
+    <ol class="list-featured">				
+        {% for post in site.tags.featured reversed limit:3 %}                
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="{{site.baseurl}}{{ post.url }}" class="text-dark">{{ post.title }}</a>
+                </h6>
+                <p class="d-block text-muted">{{ post.pitch }}</p>
             </span>
             </li>                
         {% endfor %}   
