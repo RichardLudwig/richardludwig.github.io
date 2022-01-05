@@ -1,0 +1,155 @@
+{
+  "title": "Windows Shortcuts",
+  "cards": [
+    {
+      "id": "1",
+      "action": "Open/Close Start Menu",
+      "shortcut": "Windows"
+    },
+    {
+      "id": "2",
+      "action": "Copy",
+      "shortcut": "Control + C"
+    },
+    {
+      "id": "3",
+      "action": "Cut",
+      "shortcut": "Control + X"
+    },
+    {
+      "id": "4",
+      "action": "Paste",
+      "shortcut": "Control + V"
+    },
+    {
+      "id": "5",
+      "action": "Maximize Window",
+      "shortcut": "F11"
+    },
+    {
+      "id": "6",
+      "action": "Maximize Window",
+      "shortcut": "Windows + Up Arrow"
+    },
+    {
+      "id": "7",
+      "action": "Open Task View",
+      "shortcut": "Windows + Tab"
+    },
+    {
+      "id": "8",
+      "action": "Display/Hide Desktop",
+      "shortcut": "Windows + D"
+    },
+    {
+      "id": "9",
+      "action": "Switch Between Open Apps",
+      "shortcut": "Alt + Tab"
+    },
+    {
+      "id": "10",
+      "action": "Open Quick Link Menu",
+      "shortcut": "Windows + X"
+    },
+    {
+      "id": "11",
+      "action": "Lock PC",
+      "shortcut": "Windows + L"
+    },
+    {
+      "id": "12",
+      "action": "Activate Menu Bar",
+      "shortcut": "Alt"
+    },
+    {
+      "id": "13",
+      "action": "Undo Last Change/Action",
+      "shortcut": "Control + Z"
+    },
+    {
+      "id": "14",
+      "action": "Redo Last Change/Action",
+      "shortcut": "Control + Y"
+    },
+    {
+      "id": "15",
+      "action": "Save File",
+      "shortcut": "Control + S"
+    },
+    {
+      "id": "16",
+      "action": "New File",
+      "shortcut": "Control + N"
+    },
+    {
+      "id": "17",
+      "action": "Create New Tab",
+      "shortcut": "Control + T"
+    },
+    {
+      "id": "18",
+      "action": "Open Existing File",
+      "shortcut": "Control + O"
+    },
+    {
+      "id": "19",
+      "action": "Print Current File",
+      "shortcut": "Control + P"
+    },
+    {
+      "id": "20",
+      "action": "Close Current Tab/Window",
+      "shortcut": "Control + W"
+    },
+    {
+      "id": "21",
+      "action": "Switch Between Programs",
+      "shortcut": "Control + Tab"
+    },
+    {
+      "id": "22",
+      "action": "Close Active File",
+      "shortcut": "Control + F4"
+    },
+    {
+      "id": "23",
+      "action": "Exit Active Program",
+      "shortcut": "Alt + F4"
+    },
+    {
+      "id": "24",
+      "action": "Open Shortcut Menu",
+      "shortcut": "Shift + F10"
+    },
+    {
+      "id": "25",
+      "action": "Refresh Explorer/Browser",
+      "shortcut": "F5"
+    },
+    {
+      "id": "26",
+      "action": "Rename Selected File",
+      "shortcut": "F2"
+    },
+    {
+      "id": "27",
+      "action": "Full Screen Mode",
+      "shortcut": "F11"
+    },
+    {
+      "id": "28",
+      "action": "Open Task Manager",
+      "shortcut": "Control + Shift + Escape"
+    },
+    {
+      "id": "29",
+      "action": "Create New Folder",
+      "shortcut": "Control + Shift + N"
+    },
+    {
+      "id": "30",
+      "action": "Open New Window",
+      "shortcut": "Control + N"
+    }
+  ]
+}
