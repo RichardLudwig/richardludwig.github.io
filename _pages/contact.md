@@ -14,5 +14,8 @@ permalink: "/contact"
 </div>
 </div>
 <textarea rows="8" class="form-control mb-3" name="message" placeholder="Message..." required></textarea>    
-<input class="btn btn-default btn-block" type="submit" value="Send">
+<!-- <input class="btn btn-default btn-block" type="submit" value="Send"> -->
+<button class="btn btn-default btn-block" type="submit">
+  <i class="far fa-paper-plane">&nbsp;Send</i>
+</button>
 </form>
