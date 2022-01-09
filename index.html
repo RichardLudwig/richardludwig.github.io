@@ -54,7 +54,9 @@ permalink: "/"
                     <a class="text-dark" href="{{site.baseurl}}{{second_post.url}}">{{ second_post.title }}</a>
                     </h2>
                     <small class="text-muted">
-                        {{ second_post.date | date: '%b %d, %Y' }}
+                        Posted by {{second_post.author | capitalize}} - {{ second_post.date | date: '%b %d, %Y' }}
+                        <br>
+                        {{second_post.pitch}}
                     </small>
                 </div>
             </div>
@@ -74,7 +76,9 @@ permalink: "/"
                     <a class="text-dark" href="{{site.baseurl}}{{third_post.url}}">{{ third_post.title }}</a>
                     </h2>
                     <small class="text-muted">
-                        {{ third_post.date | date: '%b %d, %Y' }}
+                        Posted by {{third_post.author | capitalize}} - {{ second_post.date | date: '%b %d, %Y' }}
+                        <br>
+                        {{third_post.pitch}}
                     </small>
                 </div>
             </div>
@@ -94,7 +98,9 @@ permalink: "/"
                     <a class="text-dark" href="{{site.baseurl}}{{fourth_post.url}}">{{ fourth_post.title }}</a>
                     </h2>
                     <small class="text-muted">
-                        {{ fourth_post.date | date: '%b %d, %Y' }}
+                        Posted by {{fourth_post.author | capitalize}} - {{ second_post.date | date: '%b %d, %Y' }}
+                        <br>
+                        {{ fourth_post.pitch }}
                     </small>
                 </div>
             </div>
@@ -123,10 +129,6 @@ permalink: "/"
 </div> 
 {% endif %}
 {% endfor %}
-
-
-    
-
 
 {% endif %} <!--endif page url is / -->
     
