@@ -13,7 +13,7 @@ body {
 .remove-site-content-margin {
 	margin-top:-30px;
 }
-img {
+img, video {
 	max-width:100%;
 }
 .tofront {
@@ -664,7 +664,7 @@ article {
     line-height: 1.15;
     color: #222222;
 }
-article p,article pre,article figure,article img,article blockquote,article iframed,article embed {
+article p,article pre,article figure,article img, video,article blockquote,article iframed,article embed {
 	margin-bottom:2rem;
 }
 article blockquote {
@@ -706,7 +706,7 @@ article h1,article h2,article h3,article h4,article h5,article h6,article .h1,ar
 	z-index:1021;
 	display:none;
 }
-.alertbar img {
+.alertbar img, video {
 	border-radius:2px;
 }
 .spanborder {
@@ -800,7 +800,7 @@ div.a2a_full_footer {display:none;}
 	 article {
 		 font-size:1.24rem;
 	 }
-	 .topfirstimage {
+	 .topfirstimage, .topfirstvideo {
 		 height:280px !Important;
 	 }
  }

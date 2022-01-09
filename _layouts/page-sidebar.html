@@ -7,6 +7,15 @@ layout: default
     <div class="col-md-8">
     {% if page.thumbnail %} 
     <img class="card-img-top mb-5 shadow-lg" src="{% if page.thumbnail contains "://" %}{{ page.thumbnail }}{% else %}{{ page.thumbnail | absolute_url }}{% endif %}" alt="{{ page.title }}"> 
+    {% else %}
+    <!-- <video class="card-img-top mb-5 shadow-lg" src="{% if page.video contains "://" %}{{ page.video }}{% else %}{{ page.video | absolute_url }}{% endif %}" alt="{{ page.title }}"></video>  -->
+    <div class="card-img-top mb-5 shadow-lg">
+        <video class="w-100" controls>
+            <source src="{% if page.video contains "://" %}{{ page.video }}{% else %}{{ page.video | absolute_url }}{% endif %}" alt="{{ page.title }}" type="video/mp4" height="500" width="750">
+            Your browser does not support the video tag.
+        </video>
+        <small>{{page.image_author}}</small>
+    </div>		
     {% endif %} 
     <div class="page-content">
         {{ content }}

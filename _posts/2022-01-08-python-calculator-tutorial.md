@@ -12,7 +12,7 @@ permalink: "/blog/python-calculator-tutorial"
 
 It is common for Python programming students to create a text-based calculator. However, creating a GUI calculator requires a different format and syntax than simply calling the Python math module.
 
-Below is a tutorial you can use to create a calculator using the Tkinter library.
+Below is a tutorial you may use to create a calculator using the Tkinter library.
 
 <hr>
 

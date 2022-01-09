@@ -24,6 +24,14 @@ layout: default
 					<img class="rounded" src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image }}{% endif %}" alt="{{ page.title }}">
 					<small>{{page.image_author}}</small>
 				</div>
+
+								{% else %}
+								<div class="rounded">
+									<video class="w-100" controls>
+										<source src="../assets/videos/thumbnails/scratch-clicker-game-thumbnail.mov" type="video/mp4" height="500" width="750">
+										Your browser does not support the video tag.
+									</video>
+								</div>		
                 {% endif %}
 			</div>
 		</div>

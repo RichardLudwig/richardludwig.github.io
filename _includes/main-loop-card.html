@@ -16,5 +16,17 @@
 	<img class="w-100" src="{% if post.thumbnail contains "://" %}{{ post.thumbnail }}{% else %}{{ site.baseurl }}/{{ post.thumbnail }}{% endif %}" alt="{{ post.title }}">
 	</a>
 	</div>
+{% else %}
+	<!-- <div class="col-md-3 pr-0 text-right">
+	<a href="{{site.baseurl}}{{post.url}}">
+	<video class="w-100" src="{% if post.video contains "://" %}{{ post.video }}{% else %}{{ site.baseurl }}/{{ post.video }}{% endif %}" alt="{{ post.title }}"></video>
+	</a>
+	</div> -->
+	<div class="col-md-3 pr-0 text-right">
+		<video class="w-100" controls>
+			<source src="{% if post.video contains "://" %}{{ post.video }}{% else %}{{ site.baseurl }}/{{ post.video }}{% endif %}" alt="{{ post.title }}" type="video/mp4" height="500" width="750">
+			Your browser does not support the video tag.
+		</video>
+	</div>		
 {% endif %}
 </div>
