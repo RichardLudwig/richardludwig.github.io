@@ -10,10 +10,10 @@
 	   {{ post.excerpt  | strip_html | strip_newlines | truncate: 186}}
 	</p>
 </div>
-{% if post.image %}
+{% if post.thumbnail %}
 	<div class="col-md-3 pr-0 text-right">
 	<a href="{{site.baseurl}}{{post.url}}">
-	<img class="w-100" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}" alt="{{ post.title }}">
+	<img class="w-100" src="{% if post.thumbnail contains "://" %}{{ post.thumbnail }}{% else %}{{ site.baseurl }}/{{ post.thumbnail }}{% endif %}" alt="{{ post.title }}">
 	</a>
 	</div>
 {% endif %}

@@ -1,9 +1,9 @@
 <div class="container">
     <div class="row">
       <div class="col-md">
-        <h4 class="font-weight-bold spanborder"><span>Most Recent</span></h4>  
+        <h4 class="font-weight-bold spanborder"><span>Tutorials</span></h4>  
             <ol class="list-featured">				
-                {% for post in site.posts reversed limit:3 %}                
+                {% for post in site.tags.tutorials reversed limit:3 %}                
                     <li class="mb-4">
                     <span>
                         <h6 class="font-weight-bold">
