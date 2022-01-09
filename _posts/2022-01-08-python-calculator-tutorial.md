@@ -7,6 +7,7 @@ image: assets/images/python_calculator_tutorial.png
 thumbnail: assets/images/thumbnails/python_calculator_tutorial.png
 tags: [recent, tutorials]
 pitch: "Create a GUI Calculator with Python 3"
+permalink: "/blog/python-calculator-tutorial"
 ---
 
 It is common for Python programming students to create a text-based calculator. However, creating a GUI calculator requires a different format and syntax than simply calling the Python math module.
