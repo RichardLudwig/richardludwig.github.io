@@ -1,0 +1,147 @@
+I"ê<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+        <h1 class="font-weight-bold title h6 text-uppercase mb-4">Posts</h1>
+            
+        
+          
+            
+          
+              <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="/blog/python-calculator-tutorial">Python Calculator Tutorial</a>
+	</h2>
+	<small class="text-muted">
+		Posted by Richard - Jan 08, 2022
+	</small>
+	<p class="excerpt">
+	   It is common for Python programming students to create a text-based calculator. However, creating a GUI calculator requires a different format and syntax than simply calling the Pytho...
+	</p>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="/blog/python-calculator-tutorial">
+	<img class="w-100" src="/assets/images/thumbnails/python_calculator_tutorial.png" alt="Python Calculator Tutorial" />
+	</a>
+	</div>
+
+</div>
+            
+          
+        
+          
+            
+          
+              <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="/blog/2022-reading-list">2022 Reading List</a>
+	</h2>
+	<small class="text-muted">
+		Posted by Richard - Jan 01, 2022
+	</small>
+	<p class="excerpt">
+	   Compared to other mediums like online courses and podcasts, I find books to be the best media format to obtain an education quickly.
+	</p>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="/blog/2022-reading-list">
+	<img class="w-100" src="/assets/images/thumbnails/books.jpg" alt="2022 Reading List" />
+	</a>
+	</div>
+
+</div>
+            
+          
+        
+          
+            
+          
+              <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="/blog/scratch-basic-clicker-game-tutorial">Scratch Basic Clicker Game Tutorial</a>
+	</h2>
+	<small class="text-muted">
+		Posted by Richard - Oct 25, 2021
+	</small>
+	<p class="excerpt">
+	   Scratch is a programming language children use to develop programs using block coding.
+	</p>
+</div>
+
+	<!-- <div class="col-md-3 pr-0 text-right">
+	<a href="/blog/scratch-basic-clicker-game-tutorial">
+	<video class="w-100" src="/assets/videos/thumbnails/scratch-clicker-game-thumbnail.mov" alt="Scratch Basic Clicker Game Tutorial"></video>
+	</a>
+	</div> -->
+	<div class="col-md-3 pr-0 text-right">
+		<video class="w-100" controls="">
+			<source src="/assets/videos/thumbnails/scratch-clicker-game-thumbnail.mov" alt="Scratch Basic Clicker Game Tutorial" type="video/mp4" height="500" width="750" />
+			Your browser does not support the video tag.
+		</video>
+	</div>		
+
+</div>
+            
+          
+        
+
+        </div>
+        
+            <div class="col-md-4">
+        <div class="sticky-top sticky-top-offset">
+    <h4 class="font-weight-bold spanborder"><span>Most Recent</span></h4>  
+    <ol class="list-featured">				
+                        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/blog/scratch-basic-clicker-game-tutorial" class="text-dark">Scratch Basic Clicker Game Tutorial</a>
+                </h6>
+                <p class="d-block text-muted">Create a basic clicker game with Scratch</p>
+            </span>
+            </li>                
+                        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/blog/2022-reading-list" class="text-dark">2022 Reading List</a>
+                </h6>
+                <p class="d-block text-muted">All the books I've read this year</p>
+            </span>
+            </li>                
+                        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/blog/python-calculator-tutorial" class="text-dark">Python Calculator Tutorial</a>
+                </h6>
+                <p class="d-block text-muted">Create a GUI Calculator with Python 3</p>
+            </span>
+            </li>                
+           
+    </ol>
+    <br />
+    <h4 class="font-weight-bold spanborder"><span>Featured</span></h4>  
+    <ol class="list-featured">				
+                        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/blog/2022-reading-list" class="text-dark">2022 Reading List</a>
+                </h6>
+                <p class="d-block text-muted">All the books I've read this year</p>
+            </span>
+            </li>                
+           
+    </ol>
+</div> 
+    
+    </div>
+        
+    </div>
+</div>
+:ET

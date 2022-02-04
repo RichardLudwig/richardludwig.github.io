@@ -1,0 +1,394 @@
+I"�<p>It is common for Python programming students to create a text-based calculator. However, creating a GUI calculator requires a different format and syntax than simply calling the Python math module.</p>
+
+<p>Below is a tutorial you may use to create a calculator using the Tkinter library.</p>
+
+<hr />
+
+<p>Import the Tkinter library.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Imports
+</span><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="n">tk</span>
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="p">.</span><span class="n">Tk</span><span class="p">()</span>
+</code></pre></div></div>
+<p><br />
+<br />
+Create some common, global, variables that you will refer to countless times while coding the program.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Common Variables
+</span><span class="n">btn_height</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">btn_width</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">font</span> <span class="o">=</span> <span class="s">"Georgia"</span>
+<span class="n">font_size</span> <span class="o">=</span> <span class="mi">20</span>
+</code></pre></div></div>
+<p><br />
+<br />
+Create a title for your calculator application.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Title
+</span><span class="n">root</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Python Calculator'</span><span class="p">)</span>  
+</code></pre></div></div>
+<p><br />
+<br />
+Assign the calculator’s basic dimensions (length and width).</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Basic Design Dimensions
+</span><span class="n">root</span><span class="p">.</span><span class="n">geometry</span><span class="p">(</span><span class="s">'350x560'</span><span class="p">)</span>
+<span class="n">root</span><span class="p">.</span><span class="n">resizable</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>  <span class="c1"># Delete line to make app dimensions resizable
+</span></code></pre></div></div>
+<p><br />
+<br />
+(Optional) Configure the background color.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Colors
+# Background Color
+</span><span class="n">root</span><span class="p">.</span><span class="n">configure</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s">"white"</span><span class="p">)</span>
+</code></pre></div></div>
+<p><br />
+<br />
+Create the calculator input text field.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">calc_input</span> <span class="o">=</span> <span class="n">tk</span><span class="p">.</span><span class="n">Text</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">))</span>
+<span class="n">calc_input</span><span class="p">.</span><span class="n">grid</span><span class="p">(</span><span class="n">columnspan</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div></div>
+<p><br />
+<br />
+Create a result String variable.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="o">=</span> <span class="s">""</span>
+</code></pre></div></div>
+<p><br />
+<br />
+Define a calculation function.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">calc</span><span class="p">():</span>
+    <span class="n">calc_result</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">retrieve_user_input</span><span class="p">())</span>
+    <span class="n">calc_input</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">tk</span><span class="p">.</span><span class="n">END</span><span class="p">)</span>
+    <span class="n">calc_result</span> <span class="o">=</span> <span class="nb">format</span><span class="p">(</span><span class="n">calc_result</span><span class="p">,</span> <span class="s">'.2f'</span><span class="p">)</span>  <span class="c1"># Limit result to 2 decimal places
+</span>    <span class="n">calc_input</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">calc_result</span><span class="p">))</span>
+</code></pre></div></div>
+<p><br />
+<br />
+Define a function to retrieve user input.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">retrieve_user_input</span><span class="p">():</span>
+    <span class="n">input_result</span> <span class="o">=</span> <span class="n">calc_input</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">tk</span><span class="p">.</span><span class="n">END</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">input_result</span>
+</code></pre></div></div>
+<p><br />
+<br />
+Define a function to insert user input.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">user_input</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="n">calc_input</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">tk</span><span class="p">.</span><span class="n">END</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">))</span>
+</code></pre></div></div>
+<p><br />
+<br />
+Define a function to clear the text field.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">clear</span><span class="p">():</span>
+    <span class="n">calc_input</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">tk</span><span class="p">.</span><span class="n">END</span><span class="p">)</span>
+</code></pre></div></div>
+<p><br />
+<br />
+Define a function to create the calculator’s buttons.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">calc_btn</span><span class="p">(</span><span class="n">calc_root</span><span class="p">,</span> <span class="n">btn_text</span><span class="p">,</span> <span class="n">btn_command</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">btn_font</span><span class="p">,</span> <span class="n">btn_font_size</span><span class="p">,</span> <span class="n">btn_row</span><span class="p">,</span> <span class="n">btn_column</span><span class="p">):</span>
+    <span class="n">calc_btn_template</span> <span class="o">=</span> <span class="n">tk</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span><span class="n">calc_root</span><span class="p">,</span>
+                                  <span class="n">text</span><span class="o">=</span><span class="n">btn_text</span><span class="p">,</span>
+                                  <span class="n">command</span><span class="o">=</span><span class="n">btn_command</span><span class="p">,</span>
+                                  <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span>
+                                  <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+                                  <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="n">btn_font</span><span class="p">,</span> <span class="n">btn_font_size</span><span class="p">))</span>
+    <span class="n">calc_btn_template</span><span class="p">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">btn_row</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">btn_column</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">calc_btn_template</span>
+</code></pre></div></div>
+<p><br />
+<br />
+Create the first row of buttons. You will notice all buttons share a similar template.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># BUTTONS
+# ROW 1
+</span><span class="n">btn_clear</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"C"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">clear</span><span class="p">(),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Exponent btn
+</span><span class="n">btn_exponent</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"e"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="s">"**"</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Pi btn
+</span><span class="n">btn_pi</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"pi"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="mf">3.14</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Percentage btn
+</span><span class="n">btn_percentage</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"%"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="s">"%"</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+<p><br />
+<br />
+Create the second row of buttons.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#  ROW 2
+# 7 btn
+</span><span class="n">btn_7</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"7"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># 8 btn
+</span><span class="n">btn_8</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"8"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># 9 btn
+</span><span class="n">btn_9</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"9"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Division btn
+</span><span class="n">btn_division</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"/"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="s">"/"</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+<p><br />
+<br />
+Create the third row of buttons.</p>
+<pre><code class="language-python3"># ROW 3
+# 4 btn
+btn_4 = calc_btn(root, "4", lambda: user_input(4), btn_height, btn_width, font, font_size, 3, 0)
+# 5 btn
+btn_5 = calc_btn(root, "5", lambda: user_input(5), btn_height, btn_width, font, font_size, 3, 1)
+# 6 btn
+btn_6 = calc_btn(root, "6", lambda: user_input(6), btn_height, btn_width, font, font_size, 3, 2)
+# Division btn
+btn_multiplication = calc_btn(root, "X", lambda: user_input("*"), btn_height, btn_width, font, font_size, 3, 3)
+</code></pre>
+<p><br />
+<br />
+Create the fourth row of buttons.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ROW 4
+# 1 btn
+</span><span class="n">btn_1</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"1"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># 2 btn
+</span><span class="n">btn_2</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"2"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># 3 btn
+</span><span class="n">btn_3</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"3"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Subtraction btn
+</span><span class="n">btn_subtraction</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"-"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="s">"-"</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+<p><br />
+<br />
+Create the fifth row of buttons.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ROW 5
+# 0 btn
+</span><span class="n">btn_0</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"0"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="s">"0"</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Decimal btn
+</span><span class="n">btn_decimal</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"."</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="s">"."</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Equate btn
+</span><span class="n">btn_equate</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"="</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">calc</span><span class="p">(),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Addition btn
+</span><span class="n">btn_addition</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"+"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="s">"+"</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+<p><br />
+<br />
+Finally, run the main loop of the program.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Run main loop
+</span><span class="n">root</span><span class="p">.</span><span class="n">mainloop</span><span class="p">()</span>
+</code></pre></div></div>
+<hr />
+
+<p><br />
+<br />
+Below is the full program code. You can copy the code here or download it from <a href="https://github.com/RichardLudwig/PythonDemos/blob/main/python_calculator.py" target="_blank">GitHub</a>.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+</pre></td><td class="code"><pre><span class="c1"># Imports
+</span><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="n">tk</span>
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="p">.</span><span class="n">Tk</span><span class="p">()</span>
+
+<span class="c1"># Common Variables
+</span><span class="n">btn_height</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">btn_width</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">font</span> <span class="o">=</span> <span class="s">"Georgia"</span>
+<span class="n">font_size</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="c1"># Title
+</span><span class="n">root</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Python Calculator'</span><span class="p">)</span>
+
+<span class="c1"># Basic Design Dimensions
+</span><span class="n">root</span><span class="p">.</span><span class="n">geometry</span><span class="p">(</span><span class="s">'350x560'</span><span class="p">)</span>
+<span class="n">root</span><span class="p">.</span><span class="n">resizable</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>  <span class="c1"># Delete line to make app dimensions resizable
+</span>
+<span class="c1"># Colors
+# Background Color
+</span><span class="n">root</span><span class="p">.</span><span class="n">configure</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s">"white"</span><span class="p">)</span>
+
+<span class="n">calc_input</span> <span class="o">=</span> <span class="n">tk</span><span class="p">.</span><span class="n">Text</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">))</span>
+<span class="n">calc_input</span><span class="p">.</span><span class="n">grid</span><span class="p">(</span><span class="n">columnspan</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="s">""</span>
+
+
+<span class="k">def</span> <span class="nf">calc</span><span class="p">():</span>
+    <span class="n">calc_result</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">retrieve_user_input</span><span class="p">())</span>
+    <span class="n">calc_input</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">tk</span><span class="p">.</span><span class="n">END</span><span class="p">)</span>
+    <span class="n">calc_result</span> <span class="o">=</span> <span class="nb">format</span><span class="p">(</span><span class="n">calc_result</span><span class="p">,</span> <span class="s">'.2f'</span><span class="p">)</span>  <span class="c1"># Limit result to 2 decimal places
+</span>    <span class="n">calc_input</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">calc_result</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">retrieve_user_input</span><span class="p">():</span>
+    <span class="n">input_result</span> <span class="o">=</span> <span class="n">calc_input</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">tk</span><span class="p">.</span><span class="n">END</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">input_result</span>
+
+
+<span class="k">def</span> <span class="nf">user_input</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="n">calc_input</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">tk</span><span class="p">.</span><span class="n">END</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">clear</span><span class="p">():</span>
+    <span class="n">calc_input</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">tk</span><span class="p">.</span><span class="n">END</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">calc_btn</span><span class="p">(</span><span class="n">calc_root</span><span class="p">,</span> <span class="n">btn_text</span><span class="p">,</span> <span class="n">btn_command</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">btn_font</span><span class="p">,</span> <span class="n">btn_font_size</span><span class="p">,</span> <span class="n">btn_row</span><span class="p">,</span> <span class="n">btn_column</span><span class="p">):</span>
+    <span class="n">calc_btn_template</span> <span class="o">=</span> <span class="n">tk</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span><span class="n">calc_root</span><span class="p">,</span>
+                                  <span class="n">text</span><span class="o">=</span><span class="n">btn_text</span><span class="p">,</span>
+                                  <span class="n">command</span><span class="o">=</span><span class="n">btn_command</span><span class="p">,</span>
+                                  <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span>
+                                  <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+                                  <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="n">btn_font</span><span class="p">,</span> <span class="n">btn_font_size</span><span class="p">))</span>
+    <span class="n">calc_btn_template</span><span class="p">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="n">btn_row</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="n">btn_column</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">calc_btn_template</span>
+
+
+<span class="c1"># BUTTONS
+# ROW 1
+</span><span class="n">btn_clear</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"C"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">clear</span><span class="p">(),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Exponent btn
+</span><span class="n">btn_exponent</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"e"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="s">"**"</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Pi btn
+</span><span class="n">btn_pi</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"pi"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="mf">3.14</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Percentage btn
+</span><span class="n">btn_percentage</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"%"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="s">"%"</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1">#  ROW 2
+# 7 btn
+</span><span class="n">btn_7</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"7"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># 8 btn
+</span><span class="n">btn_8</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"8"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># 9 btn
+</span><span class="n">btn_9</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"9"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Division btn
+</span><span class="n">btn_division</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"/"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="s">"/"</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># ROW 3
+# 4 btn
+</span><span class="n">btn_4</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"4"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># 5 btn
+</span><span class="n">btn_5</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"5"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># 6 btn
+</span><span class="n">btn_6</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"6"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Division btn
+</span><span class="n">btn_multiplication</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"X"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="s">"*"</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># ROW 4
+# 1 btn
+</span><span class="n">btn_1</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"1"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># 2 btn
+</span><span class="n">btn_2</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"2"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># 3 btn
+</span><span class="n">btn_3</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"3"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Subtraction btn
+</span><span class="n">btn_subtraction</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"-"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="s">"-"</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># ROW 5
+# 0 btn
+</span><span class="n">btn_0</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"0"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="s">"0"</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Decimal btn
+</span><span class="n">btn_decimal</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"."</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="s">"."</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Equate btn
+</span><span class="n">btn_equate</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"="</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">calc</span><span class="p">(),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Addition btn
+</span><span class="n">btn_addition</span> <span class="o">=</span> <span class="n">calc_btn</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s">"+"</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">user_input</span><span class="p">(</span><span class="s">"+"</span><span class="p">),</span> <span class="n">btn_height</span><span class="p">,</span> <span class="n">btn_width</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="n">font_size</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Run main loop
+</span><span class="n">root</span><span class="p">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+:ET
