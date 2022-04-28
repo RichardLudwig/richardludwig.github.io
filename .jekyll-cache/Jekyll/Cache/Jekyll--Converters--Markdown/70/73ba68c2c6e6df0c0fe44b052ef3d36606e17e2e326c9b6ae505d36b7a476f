@@ -1,0 +1,45 @@
+I"f<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+        <h1 class="font-weight-bold title h6 text-uppercase mb-4">Apps</h1>
+            
+        
+
+        </div>
+        
+            <div class="col-md-4">
+        <div class="sticky-top sticky-top-offset">
+    <h4 class="font-weight-bold spanborder"><span>Most Recent</span></h4>  
+    <ol class="list-featured">				
+                        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/blog/2022-reading-list" class="text-dark">2022 Reading List</a>
+                </h6>
+                <p class="d-block text-muted">All the books I've read this year</p>
+            </span>
+            </li>                
+           
+    </ol>
+    <br />
+    <h4 class="font-weight-bold spanborder"><span>Featured</span></h4>  
+    <ol class="list-featured">				
+                        
+            <li class="mb-4">
+            <span>
+                <h6 class="font-weight-bold">
+                    <a href="/blog/2022-reading-list" class="text-dark">2022 Reading List</a>
+                </h6>
+                <p class="d-block text-muted">All the books I've read this year</p>
+            </span>
+            </li>                
+           
+    </ol>
+</div> 
+    
+    </div>
+        
+    </div>
+</div>
+:ET

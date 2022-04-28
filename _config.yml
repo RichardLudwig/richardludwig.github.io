@@ -1,7 +1,7 @@
 # Site
 name: 'RichardLudwig.com'
 author: 'Richard Ludwig'
-description: 'Welcome to my portfolio site, a blog focused on computer programming demos and general STEM topics.'
+description: 'Welcome to my portfolio site, a blog focused on health sciences STEM topics.'
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
 baseurl: ''
