@@ -1,32 +1,24 @@
----
-title: "Home"
-layout: default
-pagination:
-    enabled: true
-permalink: "/"
----
-
-
-<div class="container">
+I"ç<div class="container">
     
 {% if page.url == "/" %}
     
     
     
 <!-- Begin post excerpts, let's highlight the first 4 posts on top -->
-<div class="row remove-site-content-margin" style="padding-left: 25px">
+<div class="row remove-site-content-margin">
+    <div class="col-md-10 col-md-offset-1">
     <!-- latest post -->
     {% assign latest_post = site.posts[0] %}
     <!-- <div class="col-md-6 col-md-offset-3"> -->
     <div class="card border-0 mb-4 box-shadow">   
     <a href="{{site.baseurl}}{{latest_post.url}}">
     {% if latest_post.thumbnail %}
-        <div class="topfirstimage" style="background-image: url({% if latest_post.thumbnail contains "://" %}{{ latest_post.thumbnail }}{% else %} {{site.baseurl}}/{{ latest_post.thumbnail}}{% endif %}); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>     
+        &lt;div class="topfirstimage" style="background-image: url({% if latest_post.thumbnail contains "://" %}{{ latest_post.thumbnail }}{% else %} {{site.baseurl}}/{{ latest_post.thumbnail}}{% endif %}); height: 200px;    background-size: cover;    background-repeat: no-repeat;"&gt;&lt;/div&gt;     
     {% else %}
     <!-- <div class="topfirstvideo" style="background-image: url({% if latest_post.video contains "://" %}{{ latest_post.video }}{% else %} {{site.baseurl}}/{{ latest_post.video}}{% endif %}); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>      -->
     <div class="topfirstvideo">
-		<video class="w-100" controls>
-			<source src="{% if latest_post.video contains "://" %}{{ latest_post.video }}{% else %}{{ site.baseurl }}/{{ latest_post.video }}{% endif %}" alt="{{ latest_post.title }}" type="video/mp4" height="200">
+		<video class="w-100" controls="">
+			&lt;source src="{% if latest_post.video contains "://" %}{{ latest_post.video }}{% else %}{{ site.baseurl }}/{{ latest_post.video }}{% endif %}" alt="{{ latest_post.title }}" type="video/mp4" height="200"&gt;
 			Your browser does not support the video tag.
 		</video>
 	</div>		
@@ -43,7 +35,9 @@ permalink: "/"
         {{ latest_post.excerpt | strip_html | strip_newlines | truncate: 136 }}
     </p>
     </div>
-</div>
+    </div>
+    </div>
+    
     
 </div>
     
@@ -75,3 +69,4 @@ permalink: "/"
 
 
 </div>
+:ET

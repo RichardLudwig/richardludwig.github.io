@@ -1,10 +1,4 @@
----
-title: "Apps"
-layout: default
-permalink: "/apps"
----
-
-<div class="container">
+I"=<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
         <h1 class="font-weight-bold title h6 text-uppercase mb-4">Apps</h1>
@@ -23,3 +17,4 @@ permalink: "/apps"
       </div>
     </div>
 </div>
+:ET
