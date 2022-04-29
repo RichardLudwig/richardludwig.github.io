@@ -7,7 +7,7 @@ image: assets/images/game-of-life.jpg
 thumbnail: assets/images/thumbnails/game-of-life.jpg
 image_author: 
 tags: [apps]
-pitch: "John Conway's Game of Life"
+pitch: "Visualizing cellular automata"
 permalink: "/blog/game-of-life"
 ---
 
