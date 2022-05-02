@@ -1,0 +1,84 @@
+I"�
+<div class="container">
+<div class="row justify-content-center">
+    <div class="col-md-8">        
+        <div class="row align-items-center mb-5">
+            <div class="col-md-9">
+                <h2 class="font-weight-bold">Richard</h2>
+                <p>Programmer</p>
+                <p class="excerpt">Welcome to my portfolio site, a blog focused on STEM topics.</p>
+            </div>
+            <div class="col-md-3 text-right">
+                <img alt="Richard" src="assets/images/profile.jpg" class="rounded-circle" height="100" width="100" />
+            </div>
+        </div>
+        <h4 class="font-weight-bold spanborder"><span>Posts by Richard</span></h4>
+            
+            
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="/blog/wild-west-typing-test">Wild West Typing Test</a>
+	</h2>
+	<small class="text-muted">
+		Posted by Richard - May 02, 2022
+	</small>
+	<p class="excerpt">
+	   I’ve been learning ReactJS, and decided to create a Wild West-themed typing test as an exercise.
+	</p>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="/blog/wild-west-typing-test">
+	<img class="w-100" src="/assets/images/thumbnails/wildwest.jpg" alt="Wild West Typing Test" />
+	</a>
+	</div>
+
+</div>
+            
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="/blog/game-of-life">John Conway's Game of Life</a>
+	</h2>
+	<small class="text-muted">
+		Posted by Richard - Apr 29, 2022
+	</small>
+	<p class="excerpt">
+	   John Conway’s Game of Life is a mathematical demonstration showing how, based on initial conditions, cells can live or die with each passing generation.
+	</p>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="/blog/game-of-life">
+	<img class="w-100" src="/assets/images/thumbnails/game-of-life.jpg" alt="John Conway's Game of Life" />
+	</a>
+	</div>
+
+</div>
+            
+            <div class="mb-5 d-flex justify-content-between main-loop-card">
+<div class="pr-3">
+	<h2 class="mb-1 h4 font-weight-bold">
+	<a class="text-dark" href="/blog/2022-reading-list">2022 Reading List</a>
+	</h2>
+	<small class="text-muted">
+		Posted by Richard - Jan 01, 2022
+	</small>
+	<p class="excerpt">
+	   Compared to other mediums like online courses and podcasts, I find books to be the best media format to obtain an education quickly.
+	</p>
+</div>
+
+	<div class="col-md-3 pr-0 text-right">
+	<a href="/blog/2022-reading-list">
+	<img class="w-100" src="/assets/images/thumbnails/books.jpg" alt="2022 Reading List" />
+	</a>
+	</div>
+
+</div>
+            
+    </div>
+</div>
+</div>
+:ET
