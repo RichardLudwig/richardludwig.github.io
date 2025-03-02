@@ -6,7 +6,7 @@ categories: [ Language ]
 image: assets/images/languages.jpg
 thumbnail: assets/images/thumbnails/languages.jpg
 image_author: 
-tags: [apps]
+tags: [sticky]
 pitch: "The four requirements of learning a language"
 permalink: "/blog/learning-languages"
 ---
