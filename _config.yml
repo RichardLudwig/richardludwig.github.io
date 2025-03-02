@@ -1,7 +1,7 @@
 # Site
 name: 'RichardLudwig.com'
 author: 'Richard Ludwig'
-description: 'Welcome to my portfolio site, a blog focused on STEM topics.'
+description: 'A record of continuous learning.'
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
 baseurl: ''
@@ -24,7 +24,7 @@ authors:
       name:           Richard
       site:           https://www.richardludwig.com
       avatar:         assets/images/profile.jpg
-      bio:            "Programmer"
+      bio:            "Autodidact"
       email:          f/xvodbjdz
       github:         https://github.com/richardludwig
  
@@ -36,7 +36,6 @@ defaults:
       path: "_posts"
     values:
       layout: post
-      # author: sal
       author: richard
       avatar: assets/images/profile.jpg
       
