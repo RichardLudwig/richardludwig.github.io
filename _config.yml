@@ -15,7 +15,8 @@
 # in the templates via {{ site.myvariable }}.
 title: Richard Ludwig
 # email: 
-description: >- What is the measure of a life lived?
+description: >- 
+What is the measure of a life lived?
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://richardludwig.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # icon: /assets/images/icon-512.png
