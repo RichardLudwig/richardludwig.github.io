@@ -14,8 +14,8 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <h1 class="center-text"><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+      <header class="center-text">
+        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
 
         {% if site.logo %}
             <img src="{{site.logo | relative_url}}" alt="Profile" />
@@ -26,8 +26,8 @@
       {{ content }}
 
       </section>
-      <footer>
-        <p class="center-text"><small>&copy;{{ "now" | date: "%Y" }} Richard Ludwig</small></p>
+      <footer class="center-text">
+        <p><small>&copy;{{ "now" | date: "%Y" }} Richard Ludwig</small></p>
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
